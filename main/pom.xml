@@ -122,7 +122,7 @@
                <notimestamp>true</notimestamp>
                <breakiterator>true</breakiterator>
                <use>false</use>
-               <source>1.8</source>
+               <!-- source>1.8</source-->
                <windowtitle>JMockit Toolkit API</windowtitle>
                <doctitle>JMockit Toolkit API Documentation</doctitle>
                <quiet>true</quiet>
