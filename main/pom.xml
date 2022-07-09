@@ -66,7 +66,7 @@
       </resources>
       <plugins>
          <plugin>
-            <artifactId>maven-compiler-plugin</artifactId><version>3.8.0</version>
+            <artifactId>maven-compiler-plugin</artifactId><version>3.10.1</version>
             <configuration>
                <encoding>UTF-8</encoding>
                <source>1.7</source><target>1.7</target>
@@ -112,7 +112,7 @@
             </executions>
          </plugin>
          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId><version>3.0.1</version>
+            <artifactId>maven-javadoc-plugin</artifactId><version>3.4.0</version>
             <configuration>
                <encoding>UTF-8</encoding>
                <nodeprecated>true</nodeprecated>
