@@ -40,6 +40,7 @@ public final class CachedClassfiles implements ClassFileTransformer
       @Nullable ClassLoader loader, String classDesc, @Nullable Class<?> classBeingRedefinedOrRetransformed,
       @Nullable ProtectionDomain protectionDomain, @Nonnull byte[] classfileBuffer
    ) {
+	  //System.out.println("transform() classDesc=" + classDesc);
       if (classDesc != null) { // can be null for Java 8 lambdas
          if (classBeingRedefinedOrRetransformed != null && classBeingRedefinedOrRetransformed == classBeingCached) {
             addClassfile(loader, classDesc, classfileBuffer);

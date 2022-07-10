@@ -150,6 +150,7 @@
             <configuration>
                <disableXmlReport>true</disableXmlReport>
                <runOrder>alphabetical</runOrder>
+               <!-- argLine>@{argLine} -javaagent:../agent.jar=coverage</argLine-->
                <argLine>@{argLine} -javaagent:../agent.jar</argLine>
                <properties><property><name>junit</name><value>false</value></property></properties>
                <excludes><exclude>**/TestNGViolatedExpectationsTest.class</exclude></excludes>
