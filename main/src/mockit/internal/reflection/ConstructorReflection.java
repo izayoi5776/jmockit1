@@ -14,6 +14,9 @@ public final class ConstructorReflection
 {
    private ConstructorReflection() {}
 
+   /**
+    * 查找特定的 constuctor
+    */
    @Nonnull
    static <T> Constructor<T> findSpecifiedConstructor(@Nonnull Class<?> theClass, @Nonnull Class<?>[] paramTypes) {
       for (Constructor<?> declaredConstructor : theClass.getDeclaredConstructors()) {
@@ -31,6 +34,9 @@ public final class ConstructorReflection
       throw new IllegalArgumentException("Specified constructor not found: " + theClass.getSimpleName() + paramTypesDesc);
    }
 
+   /**
+    * 调用有参数 constructor
+    */
    @Nonnull
    public static <T> T invokeAccessible(@Nonnull Constructor<T> constructor, @Nonnull Object... initArgs) {
       try {
@@ -55,12 +61,18 @@ public final class ConstructorReflection
       }
    }
 
+   /**
+    * 用有参数 constructor 实例化类 aClass
+    */
    public static void newInstanceUsingCompatibleConstructor(@Nonnull Class<?> aClass, @Nonnull String argument) throws ReflectiveOperationException {
       Constructor<?> constructor = aClass.getDeclaredConstructor(String.class);
       ensureThatMemberIsAccessible(constructor);
       constructor.newInstance(argument);
    }
 
+   /**
+    * 用默认 constructor 实例化类 aClass
+    */
    @Nonnull
    public static <T> T newInstanceUsingDefaultConstructor(@Nonnull Class<T> aClass) {
       try {
@@ -76,6 +88,9 @@ public final class ConstructorReflection
       }
    }
 
+   /**
+    * 用默认 constructor 实例化类 aClass. 不产生例外。
+    */
    @Nullable
    public static <T> T newInstanceUsingDefaultConstructorIfAvailable(@Nonnull Class<T> aClass) {
       try {
@@ -85,6 +100,9 @@ public final class ConstructorReflection
       catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException ignore) { return null; }
    }
 
+   /**
+    * 用有参数 constructor 实例化类 aClass
+    */
    @Nullable
    public static <T> T newInstanceUsingPublicConstructorIfAvailable(
       @Nonnull Class<T> aClass, @Nonnull Class<?>[] parameterTypes, @Nonnull Object... initArgs
